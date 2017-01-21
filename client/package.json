@@ -1,0 +1,44 @@
+{
+  "name": "qasession",
+  "version": "1.0.0",
+  "description": "web app for interactive info session",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp default",
+    "watch": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paul-Kijtapart/QAsession.git"
+  },
+  "keywords": [
+    "qasession"
+  ],
+  "author": "aornawat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Paul-Kijtapart/QAsession/issues"
+  },
+  "homepage": "https://github.com/Paul-Kijtapart/QAsession#readme",
+  "dependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "gulp": "^3.9.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "gulp-compass": "^2.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "webpack-stream": "^3.2.0"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "es2015"
+    ]
+  }
+}
