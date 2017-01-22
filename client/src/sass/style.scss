@@ -1,0 +1,15 @@
+// Plugins
+@import "compass";
+@import "normalize";
+@import "grids";
+
+// Pages
+@import "partials/variables";
+@import "partials/login";
+
+// Initialize 
+@include normalize;
+
+#root {
+	@include container(980px);
+}

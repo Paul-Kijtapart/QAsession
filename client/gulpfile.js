@@ -6,6 +6,12 @@ const webpack = require('webpack-stream');
 const path = require('path');
 const SRC = path.resolve(__dirname, 'src');
 const PUBLIC = path.resolve(__dirname, 'public');
+const paths = {
+	sass_dir: path.join(SRC, 'sass'),
+	css_dir: path.join(PUBLIC),
+	scripts: path.join(SRC, '/**/*.js'),
+	styles: path.join(SRC, '/**/*.scss')
+};
 
 // Scripts
 gulp.task('js', function() {
@@ -30,11 +36,11 @@ gulp.task('js', function() {
 
 // Styles
 gulp.task('css', function() {
-	gulp.src(SRC + '/style.scss')
+	return gulp.src(path.join(SRC, 'sass', 'style.scss'))
 		.pipe(compass({
-			css: PUBLIC,
-			sass: SRC,
-			image: PUBLIC
+			css: paths.css_dir,
+			sass: paths.sass_dir,
+			require: ['susy', 'normalize-scss']
 		}))
 		.on('error', function(error) {
 			// Would like to catch the error here 
@@ -44,11 +50,6 @@ gulp.task('css', function() {
 		.pipe(minifyCSS())
 		.pipe(gulp.dest(PUBLIC));
 });
-
-const paths = {
-	scripts: SRC + '/**/*.js',
-	styles: SRC + '/**/*.scss'
-};
 
 // Watch All styles and scripts
 gulp.task('watch', function() {
