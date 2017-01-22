@@ -3,13 +3,13 @@
 @import "normalize";
 @import "grids";
 
-// Pages
-@import "partials/variables";
-@import "partials/login";
-
 // Initialize 
 @include normalize;
+@import "partials/variables";
 
-#root {
-	@include container(980px);
-}
+// Pages
+@import "partials/layout";
+@import "partials/login";
+@import "partials/QA";
+
+

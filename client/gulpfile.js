@@ -17,6 +17,11 @@ const paths = {
 gulp.task('js', function() {
 	return gulp.src(SRC + '/index.js')
 		.pipe(webpack({
+			plugins: process.env.NODE_ENV === 'production' ? [
+				new webpack.optimize.DedupePlugin(),
+				new webpack.optimize.OccurrenceOrderPlugin(),
+				new webpack.optimize.UglifyJsPlugin()
+			] : [],
 			module: {
 				loaders: [{
 					test: /\.jsx?/,
