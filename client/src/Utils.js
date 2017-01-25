@@ -61,15 +61,23 @@ function fetchQuestions() {
 
 /*
  * Insert New Question to the Server
- * URL: "/questions"
+ * URL: "/questions/:question_id"
  */
 function postQuestion(question) {
 	return sendRequest(path.join('localhost', 'products'), 'POST', question);
 };
 
 /*
+ * Remove the question on the server
+ * URL: "/questions/:question_id"
+ */
+function removeQuestion(question) {
+
+};
+
+/*
  * Upvote the question with corresponding ID on the Server
- * URL: "/questions/:question_id:\\d+/upvote"
+ * URL: '/questions/:question_id/upvote'
  */
 function upvote(questionID) {
 	return sendRequest(path.join('localhost', 'questions', 'questionID:', questionID, 'upvote'), 'POST');
