@@ -6,9 +6,9 @@ const bodyParser = require('body-parser');
 var app = new express();
 
 // Database
-// require(path.join(__dirname, 'models', 'models.js'));
-// var mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost/QAsession');
+require(path.join(__dirname, 'models', 'models.js'));
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/QAsession');
 
 
 app.use(bodyParser.json());

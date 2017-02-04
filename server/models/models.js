@@ -5,7 +5,8 @@ const questionSchema = new Schema({
 	_id: Number,
 	questionDetail: String,
 	name: String,
-	date: Date
+	date: Date,
+	rating: Number
 });
 
 mongoose.model('Question', questionSchema);
