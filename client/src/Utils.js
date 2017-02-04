@@ -1,5 +1,4 @@
 // Plug-in modules
-const path = require('path');
 
 // Send Request to Server 
 function sendRequest(url, method, data, timeout) {
@@ -47,6 +46,8 @@ function sendRequest(url, method, data, timeout) {
 				message: xhr.responseText
 			});
 		};
+
+		xhr.setRequestHeader("Content-Type", "application/json");
 		xhr.send(data);
 	});
 };
@@ -56,7 +57,7 @@ function sendRequest(url, method, data, timeout) {
  * URL: "/questions"	
  */
 function fetchQuestions() {
-	return sendRequest(path.join('localhost', 'products'), 'GET');
+	return sendRequest('http://localhost:3000/questions', 'GET');
 };
 
 /*
@@ -64,15 +65,15 @@ function fetchQuestions() {
  * URL: "/questions/:question_id"
  */
 function postQuestion(question) {
-	return sendRequest(path.join('localhost', 'products'), 'POST', question);
+	return sendRequest('http://localhost:3000/questions', 'POST', question);
 };
 
 /*
  * Remove the question on the server
  * URL: "/questions/:question_id"
  */
-function removeQuestion(question) {
-
+function removeQuestion(questionID) {
+	return sendRequest('http://localhost:3000/questions/' + questionID, 'DELETE');
 };
 
 /*
@@ -80,7 +81,7 @@ function removeQuestion(question) {
  * URL: '/questions/:question_id/upvote'
  */
 function upvote(questionID) {
-	return sendRequest(path.join('localhost', 'questions', 'questionID:', questionID, 'upvote'), 'POST');
+	return sendRequest('http://localhost:3000/questions/' + questionID + '/upvote', 'PUT');
 };
 
 

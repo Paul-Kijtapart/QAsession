@@ -24,13 +24,13 @@ class QuestionForm extends React.Component {
 	// Add the newly posted question to the List of Active questions
 	handleSubmit(event) {
 		event.preventDefault();
-		const timeStamp = new Date().toLocaleString();
+		const date = new Date();
 		const numQuestions = this.props.numQuestions;
 		const question = {
-			id: numQuestions,
+			_id: numQuestions,
 			questionDetail: this.state.questionDetail,
 			name: this.state.name,
-			timeStamp: timeStamp,
+			date: date,
 			rating: 0
 		};
 		this.props.addQuestion(question);

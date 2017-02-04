@@ -9,13 +9,13 @@ class Question extends React.Component {
 	// Upvote this question
 	upvote(event) {
 		event.preventDefault();
-		this.props.onUpvote(this.props.id);
+		this.props.onUpvote(this.props._id);
 	}
 
 	render() {
 		const questionDetail = this.props.questionDetail;
 		const name = this.props.name;
-		const timeStamp = this.props.timeStamp;
+		const timeStamp = (this.props.date) ? this.props.date.toLocaleString() : "no timestamp";
 		const rating = this.props.rating;
 		return (
 			<li className="Question">

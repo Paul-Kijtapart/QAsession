@@ -23,10 +23,10 @@ class QuestionList extends React.Component {
 		var questions = activeQuestions.map(function(question, index) {
 			return (<Question
 						key={index}
-						id={question.id}
+						_id={question._id}
 						questionDetail={question.questionDetail}
 						name={question.name}
-						timeStamp={question.timeStamp}
+						date={question.date}
 						rating={question.rating}
 						onUpvote={this.props.onUpvote} 
 					/>);

@@ -32,12 +32,13 @@ fetchQuestions()
 		console.error(reason);
 	})
 	.then(function(questions) {
-		var temp = [];
+		console.log(questions);
+		debugger;
 		ReactDOM.render((
 			<Router history={browserHistory}>
-		<Route path="/" component={HI} />
-	    <Route path="/logIn" component={LogIn}/>
-	    <Route path="/QA" component={QA} questions={temp}/>
-	</Router>
+				<Route path="/" component={HI} />
+			    <Route path="/logIn" component={LogIn}/>
+			    <Route path="/QA" component={QA} questions={JSON.parse(questions)}/>
+			</Router>
 		), document.getElementById('root'));
 	});

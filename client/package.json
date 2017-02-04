@@ -4,7 +4,7 @@
   "description": "web app for interactive info session",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node index.js",
     "gulp": "gulp default",
     "watch": "gulp watch"
@@ -36,6 +36,7 @@
     "express": "^4.14.0",
     "gulp-compass": "^2.1.0",
     "gulp-minify-css": "^1.2.4",
+    "jest": "^18.1.0",
     "webpack-stream": "^3.2.0"
   },
   "babel": {
