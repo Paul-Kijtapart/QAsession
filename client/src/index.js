@@ -33,7 +33,6 @@ fetchQuestions()
 	})
 	.then(function(questions) {
 		console.log(questions);
-		debugger;
 		ReactDOM.render((
 			<Router history={browserHistory}>
 				<Route path="/" component={HI} />

@@ -1,9 +1,14 @@
-@import "susy";
-
 $susy: (
   columns: 12,
   gutters: 1/4,
   math: fluid,
   output: float,
-  global-box-sizing: border-box
+  gutter-position: inside,
+  global-box-sizing: border-box,
+  debug: (
+    image: show,
+    color: blue,
+    output: overlay,
+    toggle: top right,
+  )
 );

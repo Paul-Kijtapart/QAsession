@@ -47,8 +47,9 @@ function sendRequest(url, method, data, timeout) {
 			});
 		};
 
-		xhr.setRequestHeader("Content-Type", "application/json");
-		xhr.send(data);
+		// Tell Server that we are sending JSON object in String
+		xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+		xhr.send(JSON.stringify(data));
 	});
 };
 

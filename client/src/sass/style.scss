@@ -1,15 +1,20 @@
 // Plugins
 @import "compass";
 @import "normalize";
-@import "grids";
+@import "susy";
 
 // Initialize 
 @include normalize;
+@import "grids";
 @import "partials/variables";
 
 // Pages
 @import "partials/layout";
 @import "partials/login";
 @import "partials/QA";
+
+body {
+	@include container(980px);
+}
 
 

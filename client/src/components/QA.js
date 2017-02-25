@@ -8,8 +8,7 @@ import QuestionForm from './QuestionForm.js';
 // Utils
 import {
 	postQuestion,
-	removeQuestion,
-	sendRequest
+	removeQuestion
 } from './../Utils.js';
 
 class QA extends React.Component {
@@ -26,8 +25,10 @@ class QA extends React.Component {
 	}
 
 	addQuestion(question) {
-		sendRequest('http://localhost:3000/questions', 'POST', question)
-			.then(function(question) {
+		postQuestion(question)
+			.then(function(server_response) {
+				console.log("Success postQuestion");
+				console.log(question);
 				this.setState(function(prevState) {
 					let activeQuestions = prevState.activeQuestions.slice();
 					activeQuestions.push(question);
@@ -36,11 +37,7 @@ class QA extends React.Component {
 						activeQuestions: activeQuestions
 					}
 				});
-			})
-			.catch(function(reason) {
-				console.log("Failed to add question.");
-				console.error(reason);
-			});
+			}.bind(this))
 	}
 
 	removeQuestion(questionID) {

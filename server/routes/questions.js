@@ -80,12 +80,11 @@ router.route('/')
 		});
 	})
 	.post(function(req, res, next) {
-
 		const question = req.body;
-		console.log(req.body);
-		console.log('Server: post question');
+		console.log('hihihii post ');
 		console.log(question);
-		if (question) {
+
+		if (question && Object.keys(question) != 0) {
 			Question.create(question, function(err, status) {
 				if (err) {
 					console.error(err);

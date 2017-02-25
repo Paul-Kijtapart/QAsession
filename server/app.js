@@ -10,11 +10,11 @@ require(path.join(__dirname, 'models', 'models.js'));
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/QAsession');
 
-
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: false
 }));
+app.use(bodyParser.json());
+
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
